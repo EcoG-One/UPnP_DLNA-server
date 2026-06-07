@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html
+    class="is_not_mobile needs_reduced_ui "
+    lang="en"
+    xmlns:og="http://opengraphprotocol.org/schema/"
+    xmlns:fb="http://www.facebook.com/2008/fbml"
+>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[(new Date).getTime()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=NREUM;"undefined"==typeof window.newrelic&&(newrelic=f);var s=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],l="api-",p=l+"ixn-";a(s,function(e,t){f[t]=o(l+t,!0,"api")}),f.addPageAction=o(l+"addPageAction",!0),f.setCurrentRouteName=o(l+"routeName",!0),t.exports=newrelic,f.interaction=function(){return(new r).get()};var d=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(p+"tracer",[Date.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[Date.now(),r,o],n),o)try{return t.apply(this,arguments)}finally{c.emit("fn-end",[Date.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){d[t]=o(p+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,(new Date).getTime()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o){if(!p.aborted){e&&e(n,r,o);for(var i=t(o),a=v(n),u=a.length,c=0;c<u;c++)a[c].apply(i,r);var f=s[w[n]];return f&&f.push([y,n,r,i]),i}}function d(e,t){b[e]=v(e).concat(t)}function v(e){return b[e]||[]}function g(e){return l[e]=l[e]||o(n)}function m(e,t){f(e,function(e,n){t=t||"feature",w[n]=t,t in s||(s[t]=[])})}var b={},w={},y={on:d,emit:n,get:g,listeners:v,context:t,buffer:m,abort:a,aborted:!1};return y}function i(){return new r}function a(){(s.api||s.feature)&&(p.aborted=!0,s=p.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},l={},p=t.exports=o();p.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!h++){var e=y.info=NREUM.info,t=l.getElementsByTagName("script")[0];if(setTimeout(f.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return f.abort();c(b,function(t,n){e[t]||(e[t]=n)}),u("mark",["onload",a()],null,"api");var n=l.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===l.readyState&&i()}function i(){u("mark",["domContent",a()],null,"api")}function a(){return(new Date).getTime()}var u=e("handle"),c=e(2),f=e("ee"),s=window,l=s.document,p="addEventListener",d="attachEvent",v=s.XMLHttpRequest,g=v&&v.prototype;NREUM.o={ST:setTimeout,CT:clearTimeout,XHR:v,REQ:s.Request,EV:s.Event,PR:s.Promise,MO:s.MutationObserver},e(1);var m=""+location,b={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1016.min.js"},w=v&&g&&g[p]&&!/CriOS/.test(navigator.userAgent),y=t.exports={offset:a(),origin:m,features:{},xhrWrappable:w};l[p]?(l[p]("DOMContentLoaded",i,!1),s[p]("load",r,!1)):(l[d]("onreadystatechange",o),s[d]("onload",r)),u("mark",["firstbyte",a()],null,"api");var h=0},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"eba5812a4d","agent":"","transactionName":"ZAZSMhYEV0RZARVfCV1MYB8QDVZZFzUEVElwDF4SFgpVW10QTl8LUgRVSRIMXEBRDwBRA0A=","atts":"SEFFRF4eG0VdExRTFUc8RRQIRwMVUBYVRhUJTB8RExIXU1ERAlkBQE1TCQlKS1JUBwBFAxxQAVRSVAwCFT4UBlULAGwTVFZaBGQXUQUEAk5sE1RWAAZkF1EFBAA/RVZXBwhrTVJSVVZvFgBVBQZlQghRAg9JWg5RAQEWGxsaEARHE1YQRDkNFmZEXQEURAMRWQFKRhdcWlcWBGkHVwdCRF5HDg4WU1MPSAFQAEhRXBsbGhAERxNWEEQ5DRZmT1AQQwxWTh4=","applicationID":"2978077","errorBeacon":"bam.nr-data.net","applicationTime":45}</script>
+        <meta http-equiv="content-language" content="en">
+        <meta http-equiv="pragma" content="no-cache" />
+        <meta http-equiv="expires" content="-1" />
+        <meta id="viewport" name="viewport" content="initial-scale=1.0,width=device-width" />
+        <script>
+            window.__start = new Date().getTime();
+            if (window.innerWidth <= 600) document.getElementById('viewport').setAttribute('content', 'initial-scale=1.0');
+                                            </script>
+                
+        
+        <title>Images for Πίτσα Παπαδοπούλου - Όσα Αγαπάω</title>
+                                    <link rel="alternate" hreflang="de" href="https://www.discogs.com/de/release/3126155-Όσα-Αγαπάω/images" />
+                                                <link rel="alternate" hreflang="en" href="https://www.discogs.com/release/3126155-Όσα-Αγαπάω/images" />
+                                                <link rel="alternate" hreflang="es" href="https://www.discogs.com/es/release/3126155-Όσα-Αγαπάω/images" />
+                                                <link rel="alternate" hreflang="fr" href="https://www.discogs.com/fr/release/3126155-Όσα-Αγαπάω/images" />
+                                                <link rel="alternate" hreflang="it" href="https://www.discogs.com/it/release/3126155-Όσα-Αγαπάω/images" />
+                                                <link rel="alternate" hreflang="ja" href="https://www.discogs.com/ja/release/3126155-Όσα-Αγαπάω/images" />
+                    
+        <link rel="stylesheet" type="text/css" href="https://s.discogs.com/dst/stylesheets/discogs.css?4964f"  />
+        <link rel="stylesheet" type="text/css" href="https://s.discogs.com/dst/stylesheets/components/icons.css?2f46f"  />
+        
+
+                <!--[if IE 7]><link rel="stylesheet" type="text/css" href="//s.discogs.com/dst/fontawesome/font-awesome-ie7.css" /><![endif]-->
+                                <link rel="icon" href="https://s.discogs.com/images/favicon.ico" />
+        <link rel="icon" sizes="16x16" href="https://s.discogs.com/images/favicon-16x16.png" />
+        <link rel="icon" sizes="32x32" href="https://s.discogs.com/images/favicon-32x32.png" />
+        <link rel="icon" sizes="96x96" href="https://s.discogs.com/images/favicon-96x96.png" />
+        <link rel="apple-touch-icon" href="https://s.discogs.com/images/apple-touch-icon-precomposed.png" />
+        <link rel="mask-icon" href="https://s.discogs.com/images/discogs-record-icon.svg" color="black">
+        <script id="dsdata">
+            function dsdata (){
+                return {"isEU": false, "locale": "en", "apiServer": "https://api.discogs.com", "assetBasePath": "dst/", "shaDate": "2017-02-02", "sentryKey": "https://30f6f9a5d9ca42b5ae3847b066e06bf3@sentry.io/51758", "ga_pageview_title": "image.viewimages", "countryAbbr": "gr", "loginUrl": "https://www.discogs.com/login", "isMobile": false, "activationHelpUrl": "/help/doc/activation", "autocompleteUrl": "/search/ac", "ga_pageview_page": "/image.viewimages", "imagesHost": "https://s.discogs.com/", "defaultLocale": "en", "recaptchaKey": "6LdGMgITAAAAAPG6lAC5r1yck_LpHUbQs4IbnNtV", "endpoint": "image.viewimages", "useSentry": true, "appEnv": "production", "sha": "a3443ca", "cookieDomain": "www.discogs.com", "isDiscogsApp": false, "userIsAdmin": false, "assetsHost": "https://s.discogs.com/", "logErrors": true};
+            }
+        </script>
+        <script>
+            window.ds = typeof window.ds == "function" ? window.ds : function(){
+                (ds.q = ds.q || []).push(arguments);
+                return ds;
+            };
+        </script>
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            
+            ga('create', 'UA-36965964-1', { 'sampleRate': 10 });
+            ga('create', 'UA-36965964-3', 'auto', 'labs', { 'sampleRate': 0.23117779306119857 });
+
+            ga('set', 'dimension1', 'en');
+            ga('labs.set', 'dimension1', 'en');
+
+            if (dsdata().userID) {
+                ga('set', '&uid', dsdata().userID);
+                ga('labs.set', '&uid', dsdata().userID);
+                
+            }
+
+            ga('require', 'displayfeatures');
+            ga('labs.require', 'displayfeatures');
+        </script>
+        <script type='text/javascript'>
+        var googletag = googletag || {};
+        googletag.cmd = googletag.cmd || [];</script>
+    </head>
+    <body class="">
+        <div id="main_wrapper">                            <div id="site_headers_super_wrap">
+    <div id="site_header_wrap">
+        <div id="site_header" role="banner" aria-label="Discogs Header">
+                        <a
+                id="header_logo"
+                href="/"
+                title="Go to Discogs.com homepage"
+            >
+                <img src="https://s.discogs.com/images/discogs-white.png?5" alt="" />
+            </a>
+            <form id="site_search" action="/search/" role="search" aria-label="Search Discogs">
+                <input
+                    id="search_q"
+                    name="q"
+                    type="text"
+                    class="autocomplete ac_type_a_m_r_13 ac_submit init"
+                    value=""
+                    autocapitalize="off"
+                    autocorrect="off"
+                                            placeholder="Search artists, albums and more..."
+                        aria-label="Search artists, albums and more..."
+                                    />
+                <button
+                    type="submit"
+                    id="do_site_search"
+                    class="submit button"
+                    name=""
+                    value=""
+                    aria-label="Search"
+                >
+                <i class="icon icon-search"></i>
+                </button>
+                <input type="hidden" class="advanced_search advanced_search_type" name="type" value="all"/>
+            </form>
+            <ul id="site_navigation" role="navigation" aria-label="Main Navigation">
+                <li id="section_nav_explore">
+                    <a href="/search/" class="nav_group_control">Explore</a>
+                </li>
+                <li id="section_nav_marketplace" class="site_nav_group" data-id="marketplace">
+                    <a href="/sell/list" class="nav_group_control" aria-label="Toggle Marketplace Menu">
+                        Marketplace<i class="icon icon-caret-down"></i>
+                    </a>
+                </li>
+                <li id="section_nav_community" class="site_nav_group" data-id="community">
+                    <a href="/group/" class="nav_group_control" aria-label="Toggle Community Menu">
+                        Community<i class="icon icon-caret-down"></i>
+                    </a>
+                    <ul class="site_nav_submenu" id="site_nav_submenu_community">
+                        <li>
+                            <a href="/group/">
+                                Groups                            </a>
+                        </li>
+                        <li>
+                            <a href="/forum/">
+                                Forum                            </a>
+                        </li>
+                        <li>
+                            <a href="/blog">
+                                Blog                            </a>
+                        </li>
+                        <li>
+                            <a href="/users/friends">
+                                Friends                            </a>
+                        </li>
+                        <li>
+                            <a href="/help/doc/forums">
+                                Guidelines                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>            <ul
+                id="activity_menu"
+                                                class="activity_menu_columns_2"
+                role="navigation"
+                aria-label="Activity Menu"
+            >
+                                    <li>
+                        <a class="button_green button" href="/users/create">
+                            Register                        </a>
+                    </li>
+                    <li>
+                        
+                        <a href="https://www.discogs.com/login?return_to=%2Frelease%2F3126155-%CE%8C%CF%83%CE%B1-%CE%91%CE%B3%CE%B1%CF%80%CE%AC%CF%89%2Fimages%3F" id="log_in_link" class="nav_group_control">
+                            Log In                        </a>
+                    </li>
+                            </ul>            <a href="#mobile_site_navigation_toggle" id="mobile_site_navigation_toggle" aria-label="Open Site Menu" class=""><i class="icon icon-bars"></i></a>
+            <ul id="mobile_site_navigation">
+                <li id="activity_menu_placeholder"></li>
+                <li id="site_navigation_placeholder"></li>
+            </ul>
+        </div>    </div></div>
+<div class="ac_div" id="ac_search_q"></div>
+
+
+                        
+<div class="flash_messages">
+                                                                                                                    <div class="alert-message alert-message-info alert-message-closable "
+            id="alert-message-False"
+            data-alert-message-closable="true"
+            data-alert-message-auto-close="false"
+                                >
+            <div class="alert-message-content float_fix alert-message-full-width">
+                <i class="icon icon-info-circle alert-message-icon"></i>
+                <a class="alert-message-close-icon"><i class="icon icon-times"></i></a>                <span class="alert-message-text">
+                                            <strong>Hello! We have selected English as your language preference. If you would like to browse in a different language, please choose a language using the dropdown. <select id="i18n_select"><option id="language_de_field" name="language_code" class="language" value="de" >Deutsch</option><option id="language_en_field" name="language_code" class="language" value="en" selected>English</option><option id="language_es_field" name="language_code" class="language" value="es" >Español</option><option id="language_fr_field" name="language_code" class="language" value="fr" >Français</option><option id="language_it_field" name="language_code" class="language" value="it" >Italiano</option><option id="language_ja_field" name="language_code" class="language" value="ja" >日本語</option></select></strong>
+                                    </span>
+            </div>
+        </div>
+    
+            
+            <noscript>
+                                <div class="alert-message alert-message-warning alert-message-closable "
+            id="alert-message-False"
+            data-alert-message-closable="true"
+            data-alert-message-auto-close="false"
+                                >
+            <div class="alert-message-content float_fix alert-message-full-width">
+                <i class="icon icon-exclamation-triangle alert-message-icon"></i>
+                <a class="alert-message-close-icon"><i class="icon icon-times"></i></a>                <span class="alert-message-text">
+                                            <strong>Please enable Javascript to take full advantage of our site features.</strong>
+                                    </span>
+            </div>
+        </div>
+    
+    </noscript>
+
+    
+</div>                                                <div id="page" class="">
+                                                                                                                    
+                <div id="page_content" role="main">
+                        <div id="editing_header">
+        <h2>
+            <a href="/%CE%A0%CE%AF%CF%84%CF%83%CE%B1-%CE%A0%CE%B1%CF%80%CE%B1%CE%B4%CE%BF%CF%80%CE%BF%CF%8D%CE%BB%CE%BF%CF%85-%CE%8C%CF%83%CE%B1-%CE%91%CE%B3%CE%B1%CF%80%CE%AC%CF%89/release/3126155">Πίτσα Παπαδοπούλου - Όσα Αγαπάω</a>&nbsp;Images</h2>
+        <ul class="editing_header_links">
+            <li>
+                <a href="/release/3126155-Όσα-Αγαπάω/history#latest">
+                    Release&nbsp;History                </a>
+            </li><li>
+                    <a href="/release/3126155-Όσα-Αγαπάω/images/update">Edit Images</a>
+                </li></ul>
+    </div>
+    <div id="view_images">
+                    <p><span class="thumbnail_link"><span class="thumbnail_border"></span><img src="https://img.discogs.com/HBsnDkUCiVXypUzK2cfd8IgD2XI=/fit-in/600x577/filters:strip_icc():format(jpeg):mode_rgb():quality(90)/discogs-images/R-3126155-1316981273.jpeg.jpg" /></span></p>
+                            <a href="/release/3126155-Όσα-Αγαπάω/images/update" class="button button_green">
+                    <i class="icon icon-pencil"></i>Update these images</a>
+                </a>
+                        <p>All images are copyrighted by their respective copyright owners.</p>
+            </div>
+                                    </div>
+                                                    
+                            </div>                            <div id="push_footer"></div>
+                    </div>                    
+<div id="site_footer_wrap">
+    <div id="site_footer" role="navigation" aria-label="Footer Navigation">
+        <ul id="site_footer_list">
+            <li>
+                <h5>Discogs</h5>
+                <ul>
+                    <li>
+                        <a href="/about">
+                            About Us</a>
+                    </li>
+                    <li>
+                        <a href="/blog">
+                            Blog</a>
+                    </li>
+                    <li>
+                        <a href="http://shop.discogs.com">Shop</a>
+                    </li>
+                    <li>
+                        <a href="/app">
+                            App</a>
+                    </li>
+                    <li>
+                        <a href="/jobs">
+                            Jobs</a>
+                    </li>
+                    <li>
+                        <a href="/developers">
+                            API</a>
+                    </li>
+                    <li>
+                        <a href="https://blog.discogs.com/en/tag/engineering-en/">
+                            Change Log</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h5>Help Is Here</h5>
+                <ul>
+                    <li>
+                        <a href="/help">
+                            Help &amp; Support</a>
+                    </li>
+                    <li>
+                        <a href="/forum/">
+                            Forum</a>
+                    </li>
+                    <li>
+                        <a class="show_keyboard_shortcuts" href="#show_keyboard_shortcuts">
+                            Keyboard Shortcuts                        </a>
+                    </li>                </ul>
+            </li>
+            <li>
+                <h5>Join In</h5>
+                <ul>
+                    <li>
+                        <a href="/getstarted/">
+                            Get Started</a>
+                    </li>
+                                            <li>
+                            <a href="https://www.discogs.com/users/create">
+                                Sign Up</a>
+                        </li>
+                                        <li>
+                        <a href="/help/doc/contributing">
+                            Contribute</a>
+                    </li>
+                    <li>
+                        <a href="/release/add">
+                            Add Release</a>
+                    </li>
+                    <li>
+                        <a href="/stats/contributors">
+                            Contributor List</a>
+                    </li>
+                    <li>
+                        <a href="https://www.transifex.com/projects/p/discogs-i18n/">
+                            Help Translate</a>
+                    </li>
+                    <li>
+                        <a href="/events">
+                            Discogs Events                        </a>
+                    <li>
+                        <a href="/advertise">
+                            Advertise With Us</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h5>Follow Us</h5>
+                <ul>
+                    <li>
+                        <a href="http://www.facebook.com/Discogs">
+                            <i class="icon icon-facebook-square"></i>Facebook
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://twitter.com/discogs">
+                            <i class="icon icon-twitter"></i>Twitter
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://instagram.com/discogs">
+                            <i class="icon icon-instagram"></i>Instagram
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.mixcloud.com/discogs/">
+                            <i class="icon icon-mixcloud"></i>Mixcloud
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://soundcloud.com/discogs">
+                            <i class="icon icon-soundcloud"></i>Soundcloud
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://discogs-official.tumblr.com">
+                            <i class="icon icon-tumblr-square"></i>Tumblr
+                        </a>
+                    </li>
+                </ul>
+            </li>        </ul>
+        <p id="site_footer_legal"><span id="copyright">
+                &copy; 2017 Discogs&reg;
+            </span>
+            <a id="terms_link" href="/help/doc/terms-of-service">Terms of Service</a>
+            <a id="privacy_link" href="/help/doc/privacy-policy">Privacy Policy</a>
+            <a id="cookie_link" href="/help/doc/cookie-policy">Cookie Policy</a>
+                        <span id="language_container">
+                <a id="i18n_link" href="#select-language" data-code="en" data-name="English">
+                    <i class="icon icon-globe"></i>
+                    English
+                    <i class="icon icon-caret-down"></i>
+                </a>
+                    <select id="i18n_select">        <option id="language_de_field" name="language_code" class="language" value="de" > Deutsch </option>
+    <option id="language_en_field" name="language_code" class="language" value="en" selected> English </option>
+    <option id="language_es_field" name="language_code" class="language" value="es" > Español </option>
+    <option id="language_fr_field" name="language_code" class="language" value="fr" > Français </option>
+    <option id="language_it_field" name="language_code" class="language" value="it" > Italiano </option>
+    <option id="language_ja_field" name="language_code" class="language" value="ja" > 日本語 </option>
+</select>
+ 
+            </span><a id="footer_menu_link">
+                <i class='icon icon-chevron-down'></i>
+                <i class='icon icon-chevron-up'></i>
+            </a>
+        </p>
+    </div>
+</div>
+<div id="act"></div>        
+        
+        <script type='text/javascript'>
+                if (googletag.cmd.length > 0) {
+            googletag.cmd.splice(0, 0, function() {
+                ds(function(require){
+                    var initialized = require('initialized');
+                    var _ = require('_');
+                    var dsdata = require('dsdata');
+                    initialized.then(function(){
+                        function makeSlot (size, name){
+                            var mapping = mappings[name];
+                            var slot = googletag.defineSlot('/1002706/ad_' + name, size, 'ad_' + name);
+                            if (mapping) slot.defineSizeMapping(mapping);
+                            slot.addService(googletag.pubads());
+                        }
+                        var mobileBanner = [320, 50];
+                        var sizes = {
+                            top: [[970, 90], [728, 90]],
+                            bottom: [[970, 90], [728, 90]],
+                            left: [160, 600],
+                            right: [[336, 280], [300, 250]]
+                        };
+                        if (document.documentElement.className.match('is_mobile')) {
+                            sizes.top.push(mobileBanner);
+                            sizes.bottom.push(mobileBanner);
+                        }
+                        var mappings = {
+                            top: googletag.sizeMapping().
+                                addSize([980, 500], sizes.top[0]).
+                                addSize([800, 500], sizes.top[1]).
+                                addSize([0, 0], sizes.top[sizes.top.length - 1]).
+                                build(),
+                            bottom: googletag.sizeMapping().
+                                addSize([980, 500], sizes.bottom[0]).
+                                addSize([800, 500], sizes.bottom[1]).
+                                addSize([0, 0], sizes.bottom[sizes.bottom.length - 1]).
+                                build(),
+                            right: googletag.sizeMapping().
+                                addSize([1205, 500], sizes.right[0]).
+                                addSize([0, 0], sizes.right[1]).
+                                build()
+                        };
+                        _.each(sizes, makeSlot);
+
+                        googletag.pubads();
+
+                        if( 'pageObject' in dsdata ) {
+                            if( 'genres' in dsdata['pageObject'] ){
+                                googletag.pubads().setTargeting('Genre', dsdata['pageObject']['genres']);
+                            }
+
+                            if( 'styles' in dsdata['pageObject'] ){
+                                googletag.pubads().setTargeting('EStyle', dsdata['pageObject']['styles']);
+                            }
+                            if( 'objectId' in dsdata['pageObject'] ) {
+                                googletag.pubads().setTargeting('objectId', dsdata['pageObject']['objectId'].toString());
+                            }
+
+                            if( 'objectType' in dsdata['pageObject'] ) {
+                                googletag.pubads().setTargeting('objectType', dsdata['pageObject']['objectType']);
+                            }
+                        }
+
+                        if( 'searchQuery' in dsdata ){
+                            googletag.pubads().setTargeting('searchQuery', dsdata['searchQuery']);
+                        }
+
+
+                        googletag.enableServices();
+                    });
+                });
+            });
+        }
+    </script>
+
+                <!--[if lte IE 7]><script type="text/javascript" src="https://s.discogs.com/dst/javascripts/bower/json2/json2.js?c88c7" ></script><![endif]-->
+<script type='text/javascript'>
+!function(){"use strict";function a(a){return"function"==typeof a||"object"==typeof a&&null!==a}function b(a){return"function"==typeof a}function c(a){return"object"==typeof a&&null!==a}function g(){}function n(){return function(){process.nextTick(s)}}function o(){var a=0,b=new l(s),c=document.createTextNode("");return b.observe(c,{characterData:!0}),function(){c.data=a=++a%2}}function p(){var a=new MessageChannel;return a.port1.onmessage=s,function(){a.port2.postMessage(0)}}function q(){return function(){setTimeout(s,1)}}function s(){for(var a=0;i>a;a+=2){var b=r[a],c=r[a+1];b(c),r[a]=void 0,r[a+1]=void 0}i=0}function u(){}function z(){return new TypeError("You cannot resolve a promise with itself")}function A(){return new TypeError("A promises callback cannot return that same promise.")}function B(a){try{return a.then}catch(b){return y.error=b,y}}function C(a,b,c,d){try{a.call(b,c,d)}catch(e){return e}}function D(a,b,c){j(function(a){var d=!1,e=C(c,b,function(c){d||(d=!0,b!==c?G(a,c):I(a,c))},function(b){d||(d=!0,J(a,b))},"Settle: "+(a._label||" unknown promise"));!d&&e&&(d=!0,J(a,e))},a)}function E(a,b){b._state===w?I(a,b._result):a._state===x?J(a,b._result):K(b,void 0,function(b){G(a,b)},function(b){J(a,b)})}function F(a,c){if(c.constructor===a.constructor)E(a,c);else{var d=B(c);d===y?J(a,y.error):void 0===d?I(a,c):b(d)?D(a,c,d):I(a,c)}}function G(b,c){b===c?J(b,z()):a(c)?F(b,c):I(b,c)}function H(a){a._onerror&&a._onerror(a._result),L(a)}function I(a,b){a._state===v&&(a._result=b,a._state=w,0===a._subscribers.length||j(L,a))}function J(a,b){a._state===v&&(a._state=x,a._result=b,j(H,a))}function K(a,b,c,d){var e=a._subscribers,f=e.length;a._onerror=null,e[f]=b,e[f+w]=c,e[f+x]=d,0===f&&a._state&&j(L,a)}function L(a){var b=a._subscribers,c=a._state;if(0!==b.length){for(var d,e,f=a._result,g=0;g<b.length;g+=3)d=b[g],e=b[g+c],d?P(c,d,e,f):e(f);a._subscribers.length=0}}function M(){this.error=null}function O(a,b){try{return a(b)}catch(c){return N.error=c,N}}function P(a,c,d,e){var g,h,i,j,f=b(d);if(f){if(g=O(d,e),g===N?(j=!0,h=g.error,g=null):i=!0,c===g)return J(c,A()),void 0}else g=e,i=!0;c._state!==v||(f&&i?G(c,g):j?J(c,h):a===w?I(c,g):a===x&&J(c,g))}function Q(a,b){try{b(function(b){G(a,b)},function(b){J(a,b)})}catch(c){J(a,c)}}function S(a,b,c,d){this._instanceConstructor=a,this.promise=new a(u,d),this._abortOnReject=c,this._validateInput(b)?(this._input=b,this.length=b.length,this._remaining=b.length,this._init(),0===this.length?I(this.promise,this._result):(this.length=this.length||0,this._enumerate(),0===this._remaining&&I(this.promise,this._result))):J(this.promise,this._validationError())}function Z(){throw new TypeError("You must pass a resolver function as the first argument to the promise constructor")}function $(){throw new TypeError("Failed to construct 'Promise': Please use the 'new' operator, this object constructor cannot be called as a function.")}function ab(a,c){this._id=Y++,this._label=c,this._state=void 0,this._result=void 0,this._subscribers=[],u!==a&&(b(a)||Z(),this instanceof ab||$(),Q(this,a))}var d;d=Array.isArray?Array.isArray:function(a){return"[object Array]"===Object.prototype.toString.call(a)};var e=d;Date.now||function(){return(new Date).getTime()},Object.create||function(a){if(arguments.length>1)throw new Error("Second argument not supported");if("object"!=typeof a)throw new TypeError("Argument must be an object");return g.prototype=a,new g};var t,i=0,j=function(a,b){r[i]=a,r[i+1]=b,i+=2,2===i&&t()},k="undefined"!=typeof window?window:{},l=k.MutationObserver||k.WebKitMutationObserver,m="undefined"!=typeof Uint8ClampedArray&&"undefined"!=typeof importScripts&&"undefined"!=typeof MessageChannel,r=new Array(1e3);t="undefined"!=typeof process&&"[object process]"==={}.toString.call(process)?n():l?o():m?p():q();var v=void 0,w=1,x=2,y=new M,N=new M;S.prototype._validateInput=function(a){return e(a)},S.prototype._validationError=function(){return new Error("Array Methods must be provided an Array")},S.prototype._init=function(){this._result=new Array(this.length)};var T=S;S.prototype._enumerate=function(){for(var a=this.length,b=this.promise,c=this._input,d=0;b._state===v&&a>d;d++)this._eachEntry(c[d],d)},S.prototype._eachEntry=function(a,b){var d=this._instanceConstructor;c(a)?a.constructor===d&&a._state!==v?(a._onerror=null,this._settledAt(a._state,b,a._result)):this._willSettleAt(d.resolve(a),b):(this._remaining--,this._result[b]=this._makeResult(w,b,a))},S.prototype._settledAt=function(a,b,c){var d=this.promise;d._state===v&&(this._remaining--,this._abortOnReject&&a===x?J(d,c):this._result[b]=this._makeResult(a,b,c)),0===this._remaining&&I(d,this._result)},S.prototype._makeResult=function(a,b,c){return c},S.prototype._willSettleAt=function(a,b){var c=this;K(a,void 0,function(a){c._settledAt(w,b,a)},function(a){c._settledAt(x,b,a)})};var U=function(a,b){return new T(this,a,!0,b).promise},V=function(a,b){function g(a){G(d,a)}function h(a){J(d,a)}var c=this,d=new c(u,b);if(!e(a))return J(d,new TypeError("You must pass an array to race.")),d;for(var f=a.length,i=0;d._state===v&&f>i;i++)K(c.resolve(a[i]),void 0,g,h);return d},W=function(a,b){var c=this;if(a&&"object"==typeof a&&a.constructor===c)return a;var d=new c(u,b);return G(d,a),d},X=function(a,b){var c=this,d=new c(u,b);return J(d,a),d},Y=0,_=ab;ab.all=U,ab.race=V,ab.resolve=W,ab.reject=X,ab.prototype={constructor:ab,then:function(a,b,c){var d=this,e=d._state;if(e===w&&!a||e===x&&!b)return this;d._onerror=null;var f=new this.constructor(u,c),g=d._result;if(e){var h=arguments[e-1];j(function(){P(e,f,h,g)})}else K(d,f,a,b);return f},"catch":function(a,b){return this.then(null,a,b)}};var bb=function(){var a;a="undefined"!=typeof global?global:"undefined"!=typeof window&&window.document?window:self;var c="Promise"in a&&"resolve"in a.Promise&&"reject"in a.Promise&&"all"in a.Promise&&"race"in a.Promise&&function(){var c;return new a.Promise(function(a){c=a}),b(c)}();c||(a.Promise=_)},cb={Promise:_,polyfill:bb};"function"==typeof define&&define.amd?define(function(){return cb}):"undefined"!=typeof module&&module.exports?module.exports=cb:"undefined"!=typeof this&&(this.ES6Promise=cb)}.call(this);
+
+ES6Promise.polyfill();
+</script>
+
+
+<!--[if lte IE 9]>    <script src="https://s.discogs.com/dst/javascripts/vendor.js?da6da"></script>
+    <script src="https://s.discogs.com/dst/javascripts/discogs.js?183d5"></script>
+<script>ds.require('app')</script>
+<script>ds.require('googleTagServices');</script><![endif]-->
+<!--[if gt IE 9]><!-->
+<script>
+(function(scripts){
+
+    var i = -1, l = scripts.length - 1;
+    var startTime = new Date().getTime();
+    var _scripts  = [];
+    var loads     = [];
+    var j;
+
+    var head = document.head || document.getElementsByTagName('head')[0];
+
+    function log(){
+        window.console && console.log && console.log.apply(console, arguments);
+    }
+
+    function makeScript(src){
+        var element  = document.createElement('script');
+        var isVendor = !!src.match(/javascripts\/(bower|lib|vendor|react-bundle)/);
+        var isSync   = !!(src.match('javascripts/define.js') || src.match('discogs.js') || src.match('moment-lib.js'));
+        var isAsync  = !(isVendor || isSync);
+        var load     = new Promise(function(resolve){
+            element.onload = function(){ resolve(src); };
+            element.src = src;
+            element.setAttribute('defer', 'defer');
+            if (isAsync) {
+                element.setAttribute('async', 'async');
+            }
+        });
+        _scripts.push({ element: element, load: load, isAsync: isAsync });
+    }
+
+    for (j = 0; j <= l; j++) {
+        makeScript(scripts[j]);
+    }
+
+    for (j = 0; j <= l; j++) {
+        loads.push(_scripts[j].load);
+    }
+
+    Promise.all(loads).then(function(urls){
+                var app = ds.require('app');
+        ds.require('googleTagServices');            });
+
+    function loadNext(){
+        i++;
+        var script = _scripts[i];
+        if (script) {
+            head.appendChild(script.element);
+            if (script.isAsync) {
+                loadNext();
+            } else {
+                script.load.then(loadNext);
+            }
+        }
+    }
+
+    loadNext();
+
+})(["https://s.discogs.com/dst/javascripts/vendor.js?da6da", "https://s.discogs.com/dst/javascripts/discogs.js?183d5"]);
+</script>
+<!--<![endif]-->
+<script>
+
+</script>
+
+
+        
+                
+                    </body>
+</html>
