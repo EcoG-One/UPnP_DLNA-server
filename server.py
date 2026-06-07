@@ -1,3 +1,6 @@
+import re
+import urllib.parse
+import html
 import asyncio
 import sqlite3
 import logging
@@ -160,34 +163,109 @@ class UPnPServer:
         return web.Response(text=xml, content_type='text/xml')
 
     async def handle_soap(self, request):
-        # Basic SOAP Handler for "Browse" action
-        # In production, you must parse the SOAP envelope XML to handle objectID and BrowseFlag
-        cursor = self.library.conn.cursor()
-        cursor.execute("SELECT id, title, mime_type, size FROM media LIMIT 50")
-        items = cursor.fetchall()
+        body = await request.text()
+        
+        # Safely extract the ObjectID using regex to bypass complex SOAP namespaces
+        match = re.search(r'<ObjectID[^>]*>(.*?)</ObjectID>', body)
+        object_id = match.group(1) if match else "0"
 
-        # Build DIDL-Lite XML
-        didl = '<DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">'
-        for item in items:
-            didl += f"""
-            <item id="{item[0]}" parentID="0" restricted="1">
-                <dc:title>{item[1]}</dc:title>
-                <upnp:class>object.item.audioItem.musicTrack</upnp:class>
-                <res protocolInfo="http-get:*:{item[2]}:*" size="{item[3]}">http://{self.ip}:{self.port}/media/{item[0]}</res>
-            </item>"""
-        didl += '</DIDL-Lite>'
+        cursor = self.library.conn.cursor()
+        items_xml = ""
+        item_count = 0
+
+        # ==========================================
+        # ROOT VIEW: List all Artists
+        # ==========================================
+        if object_id == "0":
+            cursor.execute("SELECT DISTINCT artist FROM media ORDER BY artist")
+            artists = cursor.fetchall()
+            
+            for (artist,) in artists:
+                if not artist: continue
+                # Create a URL-safe virtual ID for the artist
+                safe_artist = urllib.parse.quote(artist)
+                v_id = f"artist_{safe_artist}"
+                
+                items_xml += f"""
+                <container id="{v_id}" parentID="0" restricted="1" searchable="0">
+                    <dc:title>{html.escape(artist)}</dc:title>
+                    <upnp:class>object.container.person.musicArtist</upnp:class>
+                </container>"""
+                item_count += 1
+
+        # ==========================================
+        # ARTIST VIEW: List Albums by selected Artist
+        # ==========================================
+        elif object_id.startswith("artist_"):
+            artist = urllib.parse.unquote(object_id.replace("artist_", ""))
+            cursor.execute("SELECT DISTINCT album FROM media WHERE artist=? ORDER BY album", (artist,))
+            albums = cursor.fetchall()
+
+            for (album,) in albums:
+                if not album: continue
+                safe_album = urllib.parse.quote(album)
+                v_id = f"album_{urllib.parse.quote(artist)}_{safe_album}"
+                
+                items_xml += f"""
+                <container id="{v_id}" parentID="{object_id}" restricted="1" searchable="0">
+                    <dc:title>{html.escape(album)}</dc:title>
+                    <upnp:class>object.container.album.musicAlbum</upnp:class>
+                </container>"""
+                item_count += 1
+
+        # ==========================================
+        # ALBUM VIEW: List Tracks in selected Album
+        # ==========================================
+        elif object_id.startswith("album_"):
+            # Extract artist and album from the virtual ID
+            parts = object_id.split('_', 2)
+            artist = urllib.parse.unquote(parts[1])
+            album = urllib.parse.unquote(parts[2])
+            
+            # Assuming you might want to sort by track number in the future, 
+            # currently sorting by title to keep the query simple.
+            cursor.execute("SELECT id, title, mime_type, size, duration FROM media WHERE artist=? AND album=? ORDER BY title", (artist, album))
+            tracks = cursor.fetchall()
+
+            for track in tracks:
+                t_id, title, mime_type, size, duration = track
+                # Format duration for UPnP (H:MM:SS.F)
+                m, s = divmod(int(duration), 60)
+                h, m = divmod(m, 60)
+                dur_str = f"{h}:{m:02d}:{s:02d}.000"
+
+                items_xml += f"""
+                <item id="{t_id}" parentID="{object_id}" restricted="1">
+                    <dc:title>{html.escape(title)}</dc:title>
+                    <upnp:class>object.item.audioItem.musicTrack</upnp:class>
+                    <upnp:artist>{html.escape(artist)}</upnp:artist>
+                    <upnp:album>{html.escape(album)}</upnp:album>
+                    <res protocolInfo="http-get:*:{mime_type}:DLNA.ORG_OP=01;DLNA.ORG_CI=0;DLNA.ORG_FLAGS=01700000000000000000000000000000" 
+                         size="{size}" duration="{dur_str}">http://{self.ip}:{self.port}/media/{t_id}</res>
+                </item>"""
+                item_count += 1
+
+        # ==========================================
+        # WRAP AND RETURN DIDL-LITE XML
+        # ==========================================
+        didl = f"""<DIDL-Lite xmlns="urn:schemas-upnp-org:metadata-1-0/DIDL-Lite/" 
+                              xmlns:dc="http://purl.org/dc/elements/1.1/" 
+                              xmlns:upnp="urn:schemas-upnp-org:metadata-1-0/upnp/">
+            {items_xml}
+        </DIDL-Lite>"""
 
         soap_response = f"""<?xml version="1.0" encoding="utf-8"?>
         <s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/" s:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
             <s:Body>
                 <u:BrowseResponse xmlns:u="urn:schemas-upnp-org:service:ContentDirectory:1">
-                    <Result>{didl.replace('<', '&lt;').replace('>', '&gt;')}</Result>
-                    <NumberReturned>{len(items)}</NumberReturned>
-                    <TotalMatches>{len(items)}</TotalMatches>
+                    <Result>{html.escape(didl)}</Result>
+                    <NumberReturned>{item_count}</NumberReturned>
+                    <TotalMatches>{item_count}</TotalMatches>
                     <UpdateID>1</UpdateID>
                 </u:BrowseResponse>
             </s:Body>
         </s:Envelope>"""
+        
         return web.Response(text=soap_response, content_type='text/xml')
 
     async def handle_media(self, request):
